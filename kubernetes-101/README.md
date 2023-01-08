@@ -457,6 +457,17 @@ curl --cacert /etc/kubernetes/pki/ca.crt $APISERVER/v1/deployments
 ```
 The above didn't work and we need to authenticate, so let's use the first client cert
 
+`cat ~/.kube/config
+
+`To get cert key in format, run below
+echo "replace client content" | base64 -d
+echo "replace key content" | base64 -d
+
+`vi client
+add the cert key formatted data to the client file
+
+`vi key
+
 `curl --cacert /etc/kubernetes/pki/ca.crt --cert client --key key $APISERVER/apis/apps/v1/deployments`
 above you can have the client and the key from the kubeconfig file
 
