@@ -490,3 +490,7 @@ proxy
 kubectl proxy --port=8080 &s
 curl localhost:8080/apis/apps/v1/deployments
 ```
+
+kubectl create sa indiasvc
+kubectl create clusterrole -h
+kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods
