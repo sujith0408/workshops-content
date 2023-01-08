@@ -494,3 +494,9 @@ curl localhost:8080/apis/apps/v1/deployments
 kubectl create sa indiasvc
 kubectl create clusterrole -h
 kubectl create clusterrole pod-reader --verb=get,list,watch --resource=pods
+
+kubectl create clusterrolebinding demo-pod-reader --clusterrole=pod-reader --serviceaccount=default:india
+
+kubectl auth can-i -h
+
+kubectl auth can-i --list --as=system:serviceaccount:default:india
